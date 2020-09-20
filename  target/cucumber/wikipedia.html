@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.0.1","implementation":{"name":"cucumber-jvm","version":"6.6.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"14.0.2+12-46"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1600618965","nanos":514397900}}},{"source":{"uri":"file:///C:/Users/loay/eclipse-workspace/fall2020Project/usercases/checkout.feature","data":"Feature: checkout\r\nScenario: one banans scanned separately\r\nGiven the price of a \"banana\" is 40\r\nWhen I checkout 1 \"banana\"\r\nThen the total price should be 40\r\n\r\n  Scenario: Two banans scanned separately\r\n   Given the price of a \"banana\" is 40\r\n   When I checkout 1 \"banana\"\r\n   And  I checkout 1 \"banana\"\r\n   Then the total price should be 80\r\n   \r\n   Scenario: A banana and Apple\r\n   Given the price of a \"banana\" is 40\r\n   And the price of a \"apple\" is 25\r\n   When I checkout 1 \"banana\"\r\n   And  I checkout 1 \"apple\"\r\n   Then the total price should be 65\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/loay/eclipse-workspace/fall2020Project/usercases/checkout.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"checkout","children":[{"scenario":{"location":{"line":2,"column":1},"keyword":"Scenario","name":"one banans scanned separately","steps":[{"location":{"line":3,"column":1},"keyword":"Given ","text":"the price of a \"banana\" is 40","id":"43f4c292-f330-446c-96aa-e073d0fb1f67"},{"location":{"line":4,"column":1},"keyword":"When ","text":"I checkout 1 \"banana\"","id":"34757a74-0ba6-4a97-8cee-2039b7bf84f7"},{"location":{"line":5,"column":1},"keyword":"Then ","text":"the total price should be 40","id":"7b168b36-86a5-4187-958b-ca9b86889eb1"}],"id":"0dcb26a7-361b-4551-9d09-8bf92df6ed5d"}},{"scenario":{"location":{"line":7,"column":3},"keyword":"Scenario","name":"Two banans scanned separately","steps":[{"location":{"line":8,"column":4},"keyword":"Given ","text":"the price of a \"banana\" is 40","id":"57f187c6-f867-493a-ba84-2da792ad1826"},{"location":{"line":9,"column":4},"keyword":"When ","text":"I checkout 1 \"banana\"","id":"dfd4a252-3b30-4fba-a267-c7f32f46a9b4"},{"location":{"line":10,"column":4},"keyword":"And ","text":"I checkout 1 \"banana\"","id":"7b966d87-6409-4d00-8c8e-60fc96b96571"},{"location":{"line":11,"column":4},"keyword":"Then ","text":"the total price should be 80","id":"ba209d9d-d1bb-469a-8ff5-1d13148e0339"}],"id":"c9b3af8e-a917-48e5-901a-905044ab2de4"}},{"scenario":{"location":{"line":13,"column":4},"keyword":"Scenario","name":"A banana and Apple","steps":[{"location":{"line":14,"column":4},"keyword":"Given ","text":"the price of a \"banana\" is 40","id":"e107a994-34c2-40c9-a8d0-b57b5f73432d"},{"location":{"line":15,"column":4},"keyword":"And ","text":"the price of a \"apple\" is 25","id":"c628fb7c-82f3-45b1-85f6-b51424c41d36"},{"location":{"line":16,"column":4},"keyword":"When ","text":"I checkout 1 \"banana\"","id":"49446560-8187-41f3-914b-ef361c57183a"},{"location":{"line":17,"column":4},"keyword":"And ","text":"I checkout 1 \"apple\"","id":"795d3fac-8b8d-4a41-84e7-b5ec7220adbe"},{"location":{"line":18,"column":4},"keyword":"Then ","text":"the total price should be 65","id":"85bf6e97-3c7c-476e-a7d9-87ca47891c28"}],"id":"f745b30a-cb03-4b32-992b-68eaf2c8839e"}}]}}},{"pickle":{"id":"de672d71-1dbc-4ff7-a545-d2640552c68a","uri":"file:///C:/Users/loay/eclipse-workspace/fall2020Project/usercases/checkout.feature","name":"one banans scanned separately","language":"en","steps":[{"text":"the price of a \"banana\" is 40","id":"b462161f-4a81-4499-9ff9-4758071b427d","astNodeIds":["43f4c292-f330-446c-96aa-e073d0fb1f67"]},{"text":"I checkout 1 \"banana\"","id":"4cd806d1-61db-4c20-95a6-a8018d1455d7","astNodeIds":["34757a74-0ba6-4a97-8cee-2039b7bf84f7"]},{"text":"the total price should be 40","id":"ee5f0f01-3cbf-4601-bf81-aa4ff400fe4d","astNodeIds":["7b168b36-86a5-4187-958b-ca9b86889eb1"]}],"astNodeIds":["0dcb26a7-361b-4551-9d09-8bf92df6ed5d"]}},{"pickle":{"id":"270bcc7b-c523-4ab5-bcae-489987c08980","uri":"file:///C:/Users/loay/eclipse-workspace/fall2020Project/usercases/checkout.feature","name":"Two banans scanned separately","language":"en","steps":[{"text":"the price of a \"banana\" is 40","id":"6bd6310c-32cb-4e81-844b-85470e62f1cf","astNodeIds":["57f187c6-f867-493a-ba84-2da792ad1826"]},{"text":"I checkout 1 \"banana\"","id":"88ccfb9d-ead4-4b2b-9379-63d6f4f5983b","astNodeIds":["dfd4a252-3b30-4fba-a267-c7f32f46a9b4"]},{"text":"I checkout 1 \"banana\"","id":"90cd6709-48a3-4042-a65a-ea9962b23375","astNodeIds":["7b966d87-6409-4d00-8c8e-60fc96b96571"]},{"text":"the total price should be 80","id":"e0f938b7-5742-4959-8b7f-b86a1cb04c20","astNodeIds":["ba209d9d-d1bb-469a-8ff5-1d13148e0339"]}],"astNodeIds":["c9b3af8e-a917-48e5-901a-905044ab2de4"]}},{"pickle":{"id":"75822bce-2a9b-4ab8-a7ec-13ab03d7b5e3","uri":"file:///C:/Users/loay/eclipse-workspace/fall2020Project/usercases/checkout.feature","name":"A banana and Apple","language":"en","steps":[{"text":"the price of a \"banana\" is 40","id":"5b256d0e-67bf-41d6-8033-ef178b461796","astNodeIds":["e107a994-34c2-40c9-a8d0-b57b5f73432d"]},{"text":"the price of a \"apple\" is 25","id":"1e3fe3a7-7f47-4bb6-b2e5-fcd5a24194c4","astNodeIds":["c628fb7c-82f3-45b1-85f6-b51424c41d36"]},{"text":"I checkout 1 \"banana\"","id":"f3aefe65-dc67-429a-a985-17ea0ffff6aa","astNodeIds":["49446560-8187-41f3-914b-ef361c57183a"]},{"text":"I checkout 1 \"apple\"","id":"1dd26af3-b8fd-456f-8371-bd5374a9d141","astNodeIds":["795d3fac-8b8d-4a41-84e7-b5ec7220adbe"]},{"text":"the total price should be 65","id":"79ac32b2-bef8-472c-a4f0-eabe8a90419f","astNodeIds":["85bf6e97-3c7c-476e-a7d9-87ca47891c28"]}],"astNodeIds":["f745b30a-cb03-4b32-992b-68eaf2c8839e"]}},{"stepDefinition":{"id":"71642ba4-e24d-4ee0-96b5-ec58ad814a62","pattern":{"source":"the total price should be {int}"},"sourceReference":{"javaMethod":{"className":"acceptance_tests.CheakoutSteps","methodName":"theTotalPriceShouldBe","methodParameterTypes":["java.lang.Integer"]}}}},{"stepDefinition":{"id":"c23b30c4-712c-4583-8b42-587915405073","pattern":{"source":"the price of a {string} is {int}"},"sourceReference":{"javaMethod":{"className":"acceptance_tests.CheakoutSteps","methodName":"thePriceOfAIs","methodParameterTypes":["java.lang.String","java.lang.Integer"]}}}},{"stepDefinition":{"id":"063f5298-9d05-49ae-98dc-0df7dff13388","pattern":{"source":"I checkout {int} {string}"},"sourceReference":{"javaMethod":{"className":"acceptance_tests.CheakoutSteps","methodName":"iCheckout","methodParameterTypes":["java.lang.Integer","java.lang.String"]}}}},{"testCase":{"id":"79908f07-6dbd-4893-a770-03d855623c0e","pickleId":"de672d71-1dbc-4ff7-a545-d2640552c68a","testSteps":[{"id":"cf6338ca-c37f-44d2-bb92-c930f88a93da","pickleStepId":"b462161f-4a81-4499-9ff9-4758071b427d","stepDefinitionIds":["c23b30c4-712c-4583-8b42-587915405073"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":15,"value":"\"banana\"","children":[{"start":16,"value":"banana","children":[{}]},{"children":[{}]}]}},{"parameterTypeName":"int","group":{"start":27,"value":"40"}}]}]},{"id":"0f84d8f8-8fbd-48bc-b402-0a3bd3d6ac0f","pickleStepId":"4cd806d1-61db-4c20-95a6-a8018d1455d7","stepDefinitionIds":["063f5298-9d05-49ae-98dc-0df7dff13388"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"int","group":{"start":11,"value":"1"}},{"parameterTypeName":"string","group":{"start":13,"value":"\"banana\"","children":[{"start":14,"value":"banana","children":[{}]},{"children":[{}]}]}}]}]},{"id":"bdc0650a-8f86-48a2-9cfa-f7029c853187","pickleStepId":"ee5f0f01-3cbf-4601-bf81-aa4ff400fe4d","stepDefinitionIds":["71642ba4-e24d-4ee0-96b5-ec58ad814a62"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"int","group":{"start":26,"value":"40"}}]}]}]}},{"testCaseStarted":{"timestamp":{"seconds":"1600618966","nanos":450379600},"testCaseId":"79908f07-6dbd-4893-a770-03d855623c0e","id":"89e2ef9e-7ad7-4b28-b647-f38433b4b736"}},{"testStepStarted":{"timestamp":{"seconds":"1600618966","nanos":456397400},"testStepId":"cf6338ca-c37f-44d2-bb92-c930f88a93da","testCaseStartedId":"89e2ef9e-7ad7-4b28-b647-f38433b4b736"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":7001700}},"timestamp":{"seconds":"1600618966","nanos":463399100},"testStepId":"cf6338ca-c37f-44d2-bb92-c930f88a93da","testCaseStartedId":"89e2ef9e-7ad7-4b28-b647-f38433b4b736"}},{"testStepStarted":{"timestamp":{"seconds":"1600618966","nanos":486398900},"testStepId":"0f84d8f8-8fbd-48bc-b402-0a3bd3d6ac0f","testCaseStartedId":"89e2ef9e-7ad7-4b28-b647-f38433b4b736"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"11","nanos":838285900}},"timestamp":{"seconds":"1600618978","nanos":324684800},"testStepId":"0f84d8f8-8fbd-48bc-b402-0a3bd3d6ac0f","testCaseStartedId":"89e2ef9e-7ad7-4b28-b647-f38433b4b736"}},{"testStepStarted":{"timestamp":{"seconds":"1600618978","nanos":325690900},"testStepId":"bdc0650a-8f86-48a2-9cfa-f7029c853187","testCaseStartedId":"89e2ef9e-7ad7-4b28-b647-f38433b4b736"}},{"testStepFinished":{"testStepResult":{"status":"FAILED","message":"java.lang.AssertionError: expected:\u003c70\u003e but was:\u003c210\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat
